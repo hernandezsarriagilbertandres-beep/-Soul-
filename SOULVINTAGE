@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi bro 🤝</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #101820, #1d2b3a);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.pagina {
+  display: none;
+  width: 90%;
+  max-width: 650px;
+  padding: 35px 25px;
+  animation: aparecer 0.5s ease;
+}
+
+.pagina.activa {
+  display: block;
+}
+
+h1 {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #d8e0e8;
+}
+
+.boton {
+  margin-top: 30px;
+  padding: 13px 28px;
+  border: none;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #182532;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.boton:hover {
+  transform: scale(1.05);
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PÁGINA 1 -->
+<section class="pagina activa" id="pagina1">
+  <h1>Me alegra tenerte de vuelta 🤝</h1>
+
+  <p>
+    La verdad, me alegra mucho volver a tenerte cerca, bro.
+    Después de todo lo que ha pasado, se siente bien poder
+    volver a compartir momentos contigo.
+  </p>
+
+  <button class="boton" onclick="siguiente(2)">
+    Siguiente →
+  </button>
+</section>
+
+<!-- PÁGINA 2 -->
+<section class="pagina" id="pagina2">
+  <h1>Empezar de nuevo 🌱</h1>
+
+  <p>
+    Espero que poco a poco nuestra relación pueda mejorar.
+    No quiero quedarme con las cosas malas del pasado,
+    sino seguir adelante y construir mejores momentos juntos.
+  </p>
+
+  <button class="boton" onclick="anterior(1)">
+    ← Atrás
+  </button>
+
+  <button class="boton" onclick="siguiente(3)">
+    Siguiente →
+  </button>
+</section>
+
+<!-- PÁGINA 3 -->
+<section class="pagina" id="pagina3">
+  <h1>Nuestra hermandad 🤜🤛</h1>
+
+  <p>
+    Espero que nuestra hermandad siga creciendo con el tiempo,
+    que podamos recuperar la confianza y que vengan muchos
+    más buenos momentos para los dos.
+  </p>
+
+  <p>
+    Me alegra tenerte de vuelta, bro. ❤️
+  </p>
+
+  <button class="boton" onclick="anterior(2)">
+    ← Atrás
+  </button>
+</section>
+
+<script>
+function siguiente(numero) {
+  document.querySelectorAll(".pagina").forEach(p => {
+    p.classList.remove("activa");
+  });
+
+  document.getElementById("pagina" + numero).classList.add("activa");
+}
+
+function anterior(numero) {
+  siguiente(numero);
+}
+</script>
+
+</body>
+</html>
